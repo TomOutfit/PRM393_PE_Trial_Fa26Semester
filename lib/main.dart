@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
-import 'services/supabase_service.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
-  // Đảm bảo Flutter Binding được khởi tạo trước khi gọi async native code
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Khởi tạo Supabase Client trước runApp
-  await SupabaseService.initialize();
+  // Khởi tạo Firebase Client
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
-  runApp(const MyApp());
+  runApp(const BookShelfApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BookShelfApp extends StatelessWidget {
+  const BookShelfApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Supabase Task Manager',
+      title: 'BookShelf',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
