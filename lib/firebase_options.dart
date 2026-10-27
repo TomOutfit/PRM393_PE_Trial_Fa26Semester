@@ -34,20 +34,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'YOUR_API_KEY',
-    appId: 'YOUR_APP_ID',
-    messagingSenderId: 'YOUR_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-    storageBucket: 'YOUR_PROJECT_ID.appspot.com',
+    apiKey: 'AIzaSyCqVUEG5noWHQEycOmr5pghKmgxd8Ua3sI',
+    appId: '1:1090023487618:web:bookshelf',
+    messagingSenderId: '1090023487618',
+    projectId: 'device-streaming-8b27ae6e',
+    authDomain: 'device-streaming-8b27ae6e.firebaseapp.com',
+    storageBucket: 'device-streaming-8b27ae6e.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'YOUR_API_KEY',
-    appId: 'YOUR_APP_ID',
-    messagingSenderId: 'YOUR_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    storageBucket: 'YOUR_PROJECT_ID.appspot.com',
+    apiKey: 'AIzaSyCqVUEG5noWHQEycOmr5pghKmgxd8Ua3sI',
+    appId: '1:1090023487618:android:36526bbf0fec840876dc9b',
+    messagingSenderId: '1090023487618',
+    projectId: 'device-streaming-8b27ae6e',
+    storageBucket: 'device-streaming-8b27ae6e.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(

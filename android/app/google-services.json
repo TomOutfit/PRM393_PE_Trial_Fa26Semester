@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1090023487618",
+    "project_id": "device-streaming-8b27ae6e",
+    "storage_bucket": "device-streaming-8b27ae6e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090023487618:android:36526bbf0fec840876dc9b",
+        "android_client_info": {
+          "package_name": "com.example.bookshelf"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqVUEG5noWHQEycOmr5pghKmgxd8Ua3sI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090023487618:android:8d501546fcc1655476dc9b",
+        "android_client_info": {
+          "package_name": "com.fitnessbattle.fitness_battle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqVUEG5noWHQEycOmr5pghKmgxd8Ua3sI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
