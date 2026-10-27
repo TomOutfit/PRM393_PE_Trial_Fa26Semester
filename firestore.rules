@@ -1,0 +1,42 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Quy tắc cho collection 'books'
+    match /books/{bookId} {
+
+      // Chỉ người dùng đã đăng nhập mới có thể đọc/ghi dữ liệu của chính mình
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+
+      // Cho phép thêm mới sách
+      allow create: if request.auth != null
+        && request.resource.data.userId == request.auth.uid
+        && isValidBook(request.resource.data);
+
+      // Cho phép cập nhật sách
+      allow update: if request.auth != null
+        && resource.data.userId == request.auth.uid
+        && request.resource.data.userId == request.auth.uid
+        && isValidBook(request.resource.data);
+
+      // Cho phép xóa sách của chính mình
+      allow delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+
+    // Hàm kiểm tra hợp lệ dữ liệu của sách
+    function isValidBook(data) {
+      return data.title is string
+          && data.title.trim().size() > 0
+          && data.title.trim().size() <= 100
+          && data.author is string
+          && data.author.trim().size() > 0
+          && data.author.trim().size() <= 60
+          && data.genre in ['Fiction', 'Non-Fiction', 'Academic', 'Other']
+          && data.status in ['To Read', 'Reading', 'Finished']
+          && (!('rating' in data) || data.rating == null || (data.rating is int && data.rating >= 0 && data.rating <= 5))
+          && (!('favorite' in data) || data.favorite is bool)
+          && (!('notes' in data) || data.notes == null || (data.notes is string && data.notes.size() <= 300));
+    }
+  }
+}
